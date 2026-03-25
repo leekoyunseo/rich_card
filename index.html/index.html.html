@@ -3,101 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>리치(Rich)의 디지털 명함</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+    <title>우리 집 막내 리치 명함 🐾</title>
     <style>
-        body { font-family: 'Gamja Flower', cursive; background-color: #FFF9E6; }
-        .business-card { 
-            border: 8px solid #FBBF24; 
-            border-radius: 30px; 
-            background-color: white;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-        .text-rich { color: #D97706; }
-        .bg-rich-light { background-color: #FEF3C7; }
-        .info-label { font-size: 0.9rem; color: #92400E; margin-bottom: 2px; }
-        .info-value { font-size: 1.2rem; font-weight: bold; color: #451A03; line-height: 1.2; }
+        body { font-family: 'Pretendard', sans-serif; background-color: #fdf6e3; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .card { background: white; width: 320px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; text-align: center; border: 3px solid #ffcc00; }
+        .photo-area { width: 100%; height: 250px; overflow: hidden; background-color: #eee; }
+        /* 사진 파일 이름은 무조건 rich.jpg 여야 합니다! */
+        .photo-area img { width: 100%; height: 100%; object-fit: cover; }
+        .info { padding: 20px; }
+        h1 { margin: 10px 0; color: #d35400; font-size: 24px; }
+        p { color: #7f8c8d; margin: 5px 0; font-size: 15px; }
+        .stats { display: flex; justify-content: space-around; margin-top: 15px; background: #fff9db; padding: 10px; border-radius: 10px; }
+        .stat-item span { display: block; font-weight: bold; color: #f39c12; }
+        .footer { font-size: 12px; color: #bdc3c7; margin-top: 15px; }
     </style>
 </head>
-<body class="p-4 flex items-center justify-center min-h-screen">
+<body>
 
-    <div class="max-w-md w-full business-card p-8 relative overflow-hidden">
-        
-        <div class="absolute top-0 left-0 w-full h-4 bg-yellow-400"></div>
-
-        <header class="text-center mb-6">
-            <div class="relative inline-block">
-                <div class="w-32 h-32 mx-auto rounded-2xl border-4 border-yellow-400 overflow-hidden shadow-md">
-                    <img src="rich.jpg" onerror="this.src='https://via.placeholder.com/200?text=Rich'" alt="리치 사진" class="w-full h-full object-cover">
-                </div>
-                <div class="absolute -bottom-2 -right-2 bg-yellow-500 text-white px-2 py-0.5 rounded-lg text-xs font-sans shadow">OFFICIAL</div>
-            </div>
-            <h1 class="text-4xl font-bold mt-4 text-rich">리치 (Rich)</h1>
-            <p class="text-lg text-gray-500">사랑스러운 말티푸 막내 🐾</p>
-        </header>
-
-        <div class="flex flex-col items-center bg-rich-light p-3 rounded-xl mb-6 shadow-inner">
-            <span id="family-dday" class="text-rich font-bold text-lg">가족이 된 지 0일째</span>
-            <span id="birth-dday" class="text-gray-500 text-sm">생후 0일째</span>
+    <div class="card">
+        <div class="photo-area">
+            <img src="rich.jpg" alt="귀여운 리치">
         </div>
-
-        <div class="grid grid-cols-2 gap-3 border-t-2 border-dashed border-yellow-100 pt-6">
+        <div class="info">
+            <h1>🐾 리치 (Rich)</h1>
+            <p>우리 집의 소중한 막내 공주님/왕자님</p>
             
-            <div class="bg-gray-50 p-3 rounded-xl border border-yellow-50 text-center">
-                <p class="info-label"><i class="fas fa-birthday-cake mr-1"></i>생일</p>
-                <p id="dog-birthday-display" class="info-value">12월 1일</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <span>가족이 된 지</span>
+                    <strong id="family-days">계산 중...</strong>
+                </div>
+                <div class="stat-item">
+                    <span>현재 나이</span>
+                    <strong id="age-days">계산 중...</strong>
+                </div>
             </div>
 
-            <div class="bg-gray-50 p-3 rounded-xl border border-yellow-50 text-center">
-                <p class="info-label"><i class="fas fa-star mr-1"></i>성격</p>
-                <p class="info-value">애교만점 똑똑이 강아지 싫어 가나디</p>
-            </div>
-
-            <div class="bg-gray-50 p-3 rounded-xl border border-yellow-50 text-center">
-                <p class="info-label"><i class="fas fa-utensils mr-1"></i>최애 음식</p>
-                <p class="info-value">열빙어, 양치껌</p>
-            </div>
-
-            <div class="bg-gray-50 p-3 rounded-xl border border-yellow-50 text-center">
-                <p class="info-label"><i class="fas fa-comment mr-1"></i>최애 단어</p>
-                <p class="info-value">"산책갈까?"</p>
-            </div>
-
-            <div class="bg-gray-50 p-3 rounded-xl border border-yellow-50 text-center">
-                <p class="info-label"><i class="fas fa-heart mr-1"></i>최애 사람</p>
-                <p class="info-value">엄마, 아빠, 할미, 현서, 꼴통, 남자 사람</p>
-            </div>
-
-            <div class="bg-gray-50 p-3 rounded-xl border border-yellow-50 text-center">
-                <p class="info-label"><i class="fas fa-football-ball mr-1"></i>최애 장난감</p>
-                <p class="info-value">마카롱</p>
-            </div>
+            <p style="margin-top: 15px; font-weight: bold; color: #e67e22;">"간식 하나면 온 세상을 다 줄게!"</p>
+            <div class="footer">Made by 22학번 이고윤서 공주님 👑</div>
         </div>
-
-        <footer class="mt-8 pt-4 text-center border-t border-gray-100">
-            <p class="text-xs text-yellow-600 font-bold tracking-widest uppercase">Rich's Identity Card</p>
-        </footer>
     </div>
 
     <script>
-        // 이 날짜들을 실제 리치 날짜로 수정하세요!
-        const familyStartDate = new Date("2022-02-04");
-        const dogBirthdayDate = new Date("2021-12-01");
-
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-
-        function calculateDday(targetDate) {
-            const diffTime = today - targetDate;
-            return Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
+        // 날짜 자동 계산 함수
+        function getDays(startDate) {
+            const start = new Date(startDate);
+            const today = new Date();
+            const diff = today - start;
+            return Math.floor(diff / (1000 * 60 * 60 * 24));
         }
 
-        document.getElementById('family-dday').innerText = `가족이 된 지 ${calculateDday(familyStartDate)}일째`;
-        document.getElementById('birth-dday').innerText = `생후 ${calculateDday(dogBirthdayDate)}일째`;
-        document.getElementById('dog-birthday-display').innerText = 
-            `${dogBirthdayDate.getMonth() + 1}월 ${dogBirthdayDate.getDate()}일`;
+        // 여기에 리치의 실제 날짜를 넣어주세요 (YYYY-MM-DD 형식)
+        document.getElementById('family-days').innerText = getDays('2022-02-04') + "일째"; 
+        document.getElementById('age-days').innerText = getDays('2022-12-01') + "일째";
     </script>
 </body>
 </html>
